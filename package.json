@@ -1,19 +1,19 @@
 {
   "name": "webmbx_study-project_1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
-    "files": [
+  "files": [
     "dist"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-	"prepublishOnly": "npm run build"
-  },	
-	"bin": {
- 	"brain-games": "dist/bin/brain-games.js"
-	},
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
+  },
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -21,5 +21,8 @@
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.1"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.9"
   }
 }
