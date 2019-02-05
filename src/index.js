@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export function askName() {
-	return readlineSync.question('What is Your name, cowboy? ');
+export const askName = () => {
+	const name = readlineSync.question('What is Your name, cowboy? ');
+	console.log(`Let's go ${name}!`);
 }

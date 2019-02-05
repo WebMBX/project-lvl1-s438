@@ -1,8 +1,7 @@
 {
   "name": "webmbx_study-project_1",
-  "version": "1.1.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.1.1",
+  "description": "stydy-project mini game",
   "files": [
     "dist"
   ],
@@ -14,7 +13,12 @@
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
-  "author": "",
+ "keywords": [
+    "study",
+    "game",
+    "learn"
+  ],
+  "author": "webmbx",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
