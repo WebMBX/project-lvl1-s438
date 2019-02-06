@@ -1,6 +1,6 @@
 {
   "name": "webmbx_study-project_1",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "stydy-project mini game",
   "files": [
     "dist"
@@ -13,7 +13,8 @@
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/games/brain-even.js",
-    "brain-calc": "dist/bin/games/brain-calc.js"
+    "brain-calc": "dist/bin/games/brain-calc.js",
+    "brain-gcd": "dist/bin/games/brain-gcd.js"
   },
   "keywords": [
     "study",
