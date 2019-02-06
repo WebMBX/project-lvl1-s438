@@ -6,5 +6,6 @@ src="https://travis-ci.org/WebMBX/project-lvl1-s438.svg?branch=master"></a>
 
 Install and run recording at:
     https://asciinema.org/a/NUk5ujBMx1WyqaLbFBj8R4Bqk
+<br>
 version 1.4.x:
     https://asciinema.org/a/eidJM3C3tMLn6n8UkxeWpRUFa
