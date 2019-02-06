@@ -47,6 +47,29 @@ const randomOperation = (op1, op2) => {
   return [operation, res];
 };
 
+const findMaxDelimeter = (a, b) => {
+  let max;
+  let min;
+  if (a < b) {
+    max = b;
+    min = a;
+  } else {
+    max = a;
+    min = b;
+  }
+  const arr = [];
+  for (let i = 1; i <= max; i++) {
+    if (!(max % i)) arr.push(i);
+  }
+
+  let maxDelimeter = 1;
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > min) return maxDelimeter;
+    if ((arr[i] > maxDelimeter) && !(min % arr[i])) maxDelimeter = arr[i];
+  }
+  return maxDelimeter;
+};
+
 const gameEven = (rounds, name) => {
   if (exitFromGame(rounds, name)) return false;
   const askingNumber = getRandomInt(10, 60);
@@ -83,6 +106,24 @@ const gameCalc = (rounds, name) => {
   return false;
 };
 
+const gameGcd = (rounds, name) => {
+  if (exitFromGame(rounds, name)) return false;
+  const number1 = getRandomInt(10, 150);
+  const number2 = getRandomInt(10, 150);
+  const maxDelimeter = findMaxDelimeter(number1, number2);
+  console.log(`Question: ${number1} ${number2}`);
+  const answer = readlineSync.question('Your answer: ');
+  const correct = maxDelimeter;
+  if (parseInt(answer, 0) === correct) {
+    console.log('Correct!');
+    gameGcd(rounds - 1, name);
+  } else {
+    console.log(`Your answer '${answer}' is wrong ;(. Correct answer was '${correct}'.`);
+    console.log(`Let's try again, ${name}!`);
+  }
+  return false;
+};
+
 export const startGameBrain = () => {
   sayHi('');
 };
@@ -95,4 +136,9 @@ export const startGameEven = () => {
 export const startGameCalc = () => {
   sayHi('What is the result of the expression?');
   gameCalc(3, askName());
+};
+
+export const startGameGcd = () => {
+  sayHi('Find the greatest common divisor of given numbers.');
+  gameGcd(3, askName());
 };
