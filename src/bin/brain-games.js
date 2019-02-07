@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { startGameBrain } from '..';
+import startGameBrain from '../games/brain-games';
 
 startGameBrain();
