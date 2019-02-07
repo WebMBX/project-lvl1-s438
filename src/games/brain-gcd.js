@@ -1,22 +1,20 @@
 import {
-  sayHi, askName, getAnswer, getRandomInt, exitFromGame, findMaxDelimeter, checkAnswer,
+  getRandomInt, findMaxDelimeter, gameConstructor,
 } from '..';
 
-const gameGcd = (rounds, name) => {
-  if (exitFromGame(rounds, name)) return false;
+const logic = () => {
   const number1 = getRandomInt(10, 150);
   const number2 = getRandomInt(10, 150);
   const maxDelimeter = findMaxDelimeter(number1, number2);
-  console.log(`Question: ${number1} ${number2}`);
-  const answer = parseInt(getAnswer(), 0);
-  const correct = maxDelimeter;
-  checkAnswer(gameGcd, rounds, answer, correct, name);
-  return false;
+  const result = {
+    q: `Question: ${number1} ${number2}`,
+    a: maxDelimeter,
+    toInt: 1,
+  };
+  return result;
 };
 
-const startGameGcd = () => {
-  sayHi('Find the greatest common divisor of given numbers.');
-  gameGcd(3, askName());
-};
+const startGameGcd = gameConstructor('What is the result of the expression?', logic);
+
 
 export default startGameGcd;

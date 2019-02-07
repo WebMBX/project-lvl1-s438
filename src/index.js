@@ -27,19 +27,19 @@ export const exitFromGame = (round, name) => {
   if (round < 1) {
     console.log('');
     console.log(`Congratulations, ${name}!`);
-    return true;
+    return false;
   }
-  return false;
+  return true;
 };
 
-export const checkAnswer = (func, rounds, answer, correct, name) => {
-  if (answer === correct) {
-    console.log('Correct!');
-    func(rounds - 1, name);
-  } else {
+export const checkAnswer = (answer, correct, name) => {
+  if (answer !== correct) {
     console.log(`Your answer '${answer}' is wrong ;(. Correct answer was '${correct}'.`);
     console.log(`Let's try again, ${name}!`);
+    return false;
   }
+  console.log('Correct!');
+  return true;
 };
 
 export const isRemainder = (number) => {
@@ -76,4 +76,20 @@ export const findMaxDelimeter = (a, b) => {
     if ((arr[i] > maxDelimeter) && !(min % arr[i])) maxDelimeter = arr[i];
   }
   return maxDelimeter;
+};
+
+
+export const gameConstructor = (hiText, logic, rounds = 3, playerName = '') => {
+  sayHi(hiText);
+  const name = (playerName !== '') ? playerName : askName();
+  const f = (limit) => {
+    if (!exitFromGame(limit, name)) return false;
+    const counter = limit - 1;
+    const game = logic();
+    console.log(game.q);
+    const answer = (game.toInt) ? parseInt(getAnswer(), 0) : getAnswer();
+    const correct = game.a;
+    return (checkAnswer(answer, correct, name)) ? f(counter) : false;
+  };
+  return f(rounds);
 };

@@ -1,20 +1,16 @@
-import {
-  sayHi, askName, getAnswer, getRandomInt, exitFromGame, isRemainder, checkAnswer,
-} from '..';
+import { getRandomInt, isRemainder, gameConstructor } from '..';
 
-const gameEven = (rounds, name) => {
-  if (exitFromGame(rounds, name)) return false;
-  const askingNumber = getRandomInt(10, 60);
-  console.log(`Question: ${askingNumber}`);
-  const answer = getAnswer();
-  const correct = isRemainder(askingNumber);
-  checkAnswer(gameEven, rounds, answer, correct, name);
-  return false;
+const logic = () => {
+  const question = getRandomInt(10, 60);
+  const correct = isRemainder(question);
+  const result = {
+    q: `Question: ${question}`,
+    a: correct,
+    fanswer: 0,
+  };
+  return result;
 };
 
-const startGameEven = () => {
-  sayHi('Answer "yes" if number even otherwise answer "no".');
-  gameEven(3, askName());
-};
+const startGameEven = gameConstructor('Answer "yes" if number even otherwise answer "no".', logic);
 
 export default startGameEven;
