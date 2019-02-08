@@ -1,6 +1,21 @@
 import {
-  getRandomInt, randomOperation, gameConstructor,
+  getRandomInt, gameConstructor,
 } from '..';
+
+const randomOperation = (op1, op2) => {
+  const opersArr = ['+', '-', '*'];
+  const random = getRandomInt(0, 3) - 1;
+  let res;
+  const operation = opersArr[random];
+  if (operation === '+') {
+    res = op1 + op2;
+  } else if (operation === '-') {
+    res = op1 - op2;
+  } else if (operation === '*') {
+    res = op1 * op2;
+  }
+  return [operation, res];
+};
 
 const logic = () => {
   const operand1 = getRandomInt(2, 150);

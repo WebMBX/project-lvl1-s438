@@ -1,4 +1,9 @@
-import { getRandomInt, isRemainder, gameConstructor } from '..';
+import { getRandomInt, gameConstructor } from '..';
+
+const isRemainder = (number) => {
+  const res = (number % 2) ? 'no' : 'yes';
+  return res;
+};
 
 const logic = () => {
   const question = getRandomInt(10, 60);
