@@ -5,7 +5,9 @@
 src="https://travis-ci.org/WebMBX/project-lvl1-s438.svg?branch=master"></a>
 
 Install and run recording at:
-    https://asciinema.org/a/NUk5ujBMx1WyqaLbFBj8R4Bqk
+https://asciinema.org/a/NUk5ujBMx1WyqaLbFBj8R4Bqk
 <br>
-version 1.4.x:
-    https://asciinema.org/a/eidJM3C3tMLn6n8UkxeWpRUFa
+version 1.4.x - https://asciinema.org/a/eidJM3C3tMLn6n8UkxeWpRUFa
+<br>
+version 1.6.x - added new game 'progressession'.
+Install and run - https://asciinema.org/a/MnxO7LniVrZ9SMQVDkHKOLvol
