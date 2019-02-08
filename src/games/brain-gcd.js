@@ -21,16 +21,16 @@ const findMaxDelimeter = (a, b) => {
 const logic = () => {
   const number1 = getRandomInt(10, 150);
   const number2 = getRandomInt(10, 150);
-  const maxDelimeter = findMaxDelimeter(number1, number2);
+  const correctAnswer = findMaxDelimeter(number1, number2);
   const result = {
     q: `Question: ${number1} ${number2}`,
-    a: maxDelimeter,
-    toInt: 1,
+    a: correctAnswer.toString(),
   };
   return result;
 };
 
-const startGameGcd = () => gameConstructor('What is the result of the expression?', logic);
+const gameRules = 'Find the greatest common divisor of given numbers.';
 
+const startGameGcd = () => gameConstructor(gameRules, logic);
 
 export default startGameGcd;

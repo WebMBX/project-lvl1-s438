@@ -1,21 +1,22 @@
 import { getRandomInt, gameConstructor } from '..';
 
-const isRemainder = (number) => {
-  const res = (number % 2) ? 'no' : 'yes';
-  return res;
+const isEven = (number) => {
+  const result = number % 2;
+  return !result;
 };
 
 const logic = () => {
   const question = getRandomInt(10, 60);
-  const correct = isRemainder(question);
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
   const result = {
     q: `Question: ${question}`,
-    a: correct,
-    fanswer: 0,
+    a: correctAnswer,
   };
   return result;
 };
 
-const startGameEven = () => gameConstructor('Answer "yes" if number even otherwise answer "no".', logic);
+const gameRules = 'Answer "yes" if number even otherwise answer "no".';
+
+const startGameEven = () => gameConstructor(gameRules, logic);
 
 export default startGameEven;

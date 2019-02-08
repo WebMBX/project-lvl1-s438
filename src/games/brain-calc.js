@@ -2,36 +2,35 @@ import {
   getRandomInt, gameConstructor,
 } from '..';
 
-const randomOperation = (op1, op2) => {
-  const opersArr = ['+', '-', '*'];
-  const random = getRandomInt(0, 3) - 1;
-  let res;
-  const operation = opersArr[random];
-  if (operation === '+') {
-    res = op1 + op2;
-  } else if (operation === '-') {
-    res = op1 - op2;
-  } else if (operation === '*') {
-    res = op1 * op2;
-  }
-  return [operation, res];
-};
-
 const logic = () => {
-  const operand1 = getRandomInt(2, 150);
-  const operand2 = getRandomInt(2, 150);
-  const res = randomOperation(operand1, operand2);
-  const operationSymbol = res[0];
-  const operationResult = res[1];
+  const op1 = getRandomInt(2, 150);
+  const op2 = getRandomInt(2, 150);
+  const opersArr = ['+', '-', '*'];
+  const random = getRandomInt(0, opersArr.length - 1);
+  let correctAnswer;
+  const operationSymbol = opersArr[random];
+  switch (operationSymbol) {
+    case '+':
+      correctAnswer = op1 + op2;
+      break;
+    case '-':
+      correctAnswer = op1 - op2;
+      break;
+    case '*':
+      correctAnswer = op1 * op2;
+      break;
+    default:
+      break;
+  }
   const result = {
-    q: `Question: ${operand1} ${operationSymbol} ${operand2}`,
-    a: operationResult,
-    toInt: 1,
+    q: `Question: ${op1} ${operationSymbol} ${op2}`,
+    a: correctAnswer.toString(),
   };
   return result;
 };
 
-const startGameCalc = () => gameConstructor('What is the result of the expression?', logic);
+const gameRules = 'What is the result of the expression?';
 
+const startGameCalc = () => gameConstructor(gameRules, logic);
 
 export default startGameCalc;

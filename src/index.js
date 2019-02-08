@@ -7,7 +7,7 @@ export const sayHi = (phrase) => {
 };
 
 export const askName = () => {
-  const name = readlineSync.question('What is Your name, cowboy? ');
+  const name = readlineSync.question('What is Your name? ');
   console.log(`Let's go ${name}!`);
   return name;
 };
@@ -15,7 +15,7 @@ export const askName = () => {
 export const getRandomInt = (a, b) => {
   const min = Math.ceil(a);
   const max = Math.floor(b);
-  return Math.abs(Math.floor(Math.random() * (min - max)) + min);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 export const getAnswer = () => {
@@ -32,9 +32,9 @@ export const exitFromGame = (round, name) => {
   return false;
 };
 
-export const checkAnswer = (answer, correct, name) => {
-  if (answer !== correct) {
-    console.log(`Your answer '${answer}' is wrong ;(. Correct answer was '${correct}'.`);
+export const checkAnswer = (playerAnswer, correctAnswer, name) => {
+  if (playerAnswer !== correctAnswer) {
+    console.log(`Your answer '${playerAnswer}' is wrong ;(. Correct answer was '${correctAnswer}'.`);
     console.log(`Let's try again, ${name}!`);
     return false;
   }
@@ -42,17 +42,17 @@ export const checkAnswer = (answer, correct, name) => {
   return true;
 };
 
-export const gameConstructor = (hiText, logic, rounds = 3, playerName = '') => {
+export const gameConstructor = (hiText, logic, rounds = 3, name = '') => {
   sayHi(hiText);
-  const name = (playerName !== '') ? playerName : askName();
+  const playerName = (name !== '') ? name : askName();
   const f = (limit) => {
-    if (exitFromGame(limit, name)) return false;
+    if (exitFromGame(limit, playerName)) return false;
     const counter = limit - 1;
     const game = logic();
     console.log(game.q);
-    const answer = (game.toInt) ? parseInt(getAnswer(), 0) : getAnswer();
-    const correct = game.a;
-    return (checkAnswer(answer, correct, name)) ? f(counter) : false;
+    const playerAnswer = getAnswer();
+    const correctAnswer = game.a;
+    return (checkAnswer(playerAnswer, correctAnswer, playerName)) ? f(counter) : false;
   };
   return f(rounds);
 };

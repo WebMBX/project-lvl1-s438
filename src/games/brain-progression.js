@@ -13,16 +13,16 @@ export const logic = () => {
     const next = prev + interval;
     arr.push(next);
   }
-  const answer = arr[changeNumber];
+  const correctAnswer = arr[changeNumber];
   arr[changeNumber] = '..';
   const question = arr.reduce((accumulator, currentValue) => `${accumulator} ${currentValue}`);
   const result = {
     q: `Question: ${question}`,
-    a: answer,
-    toInt: 1,
+    a: correctAnswer.toString(),
   };
   return result;
 };
 
+const gameRules = 'What number is missing in the progression?';
 
-export const startGameProgression = () => gameConstructor('What number is missing in the progression?', logic);
+export const startGameProgression = () => gameConstructor(gameRules, logic);
