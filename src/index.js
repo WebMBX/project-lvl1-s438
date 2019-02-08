@@ -27,9 +27,9 @@ export const exitFromGame = (round, name) => {
   if (round < 1) {
     console.log('');
     console.log(`Congratulations, ${name}!`);
-    return false;
+    return true;
   }
-  return true;
+  return false;
 };
 
 export const checkAnswer = (answer, correct, name) => {
@@ -83,7 +83,7 @@ export const gameConstructor = (hiText, logic, rounds = 3, playerName = '') => {
   sayHi(hiText);
   const name = (playerName !== '') ? playerName : askName();
   const f = (limit) => {
-    if (!exitFromGame(limit, name)) return false;
+    if (exitFromGame(limit, name)) return false;
     const counter = limit - 1;
     const game = logic();
     console.log(game.q);

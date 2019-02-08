@@ -11,6 +11,6 @@ const logic = () => {
   return result;
 };
 
-const startGameEven = gameConstructor('Answer "yes" if number even otherwise answer "no".', logic);
+const startGameEven = () => gameConstructor('Answer "yes" if number even otherwise answer "no".', logic);
 
 export default startGameEven;

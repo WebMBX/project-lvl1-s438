@@ -14,7 +14,7 @@ const logic = () => {
   return result;
 };
 
-const startGameGcd = gameConstructor('What is the result of the expression?', logic);
+const startGameGcd = () => gameConstructor('What is the result of the expression?', logic);
 
 
 export default startGameGcd;
