@@ -4,7 +4,7 @@
 <a href="https://travis-ci.org/WebMBX/project-lvl1-s438"><img
 src="https://travis-ci.org/WebMBX/project-lvl1-s438.svg?branch=master"></a>
 
-Trainin hexlet project. Small brain games.
+Training hexlet project. Small brain games.
 
 ## Version history
 - < 1.4.x One game "brain-even". 
