@@ -8,7 +8,7 @@ Training hexlet project. Small brain games.
 
 ## Version history
 - < 1.4.x One game "brain-even". 
-- 1.4.x Added new game ["brain-calc"](https://github.com/angular-medellin/meetup)
+- 1.4.x Added new game ["brain-calc"](https://asciinema.org/a/eidJM3C3tMLn6n8UkxeWpRUFa)
 - 1.5.x Added new game "brain-gcd"
 - 1.6.x Added new game ["brain-progression"](https://asciinema.org/a/MnxO7LniVrZ9SMQVDkHKOLvol)
 - 1.7.x Added new game ["brain-prime"](https://asciinema.org/a/FpfDoDnPht7qFfeoTRZDdV2y8)
