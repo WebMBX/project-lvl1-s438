@@ -11,3 +11,6 @@ version 1.4.x - https://asciinema.org/a/eidJM3C3tMLn6n8UkxeWpRUFa
 <br>
 version 1.6.x - added new game 'progressession'.
 Install and run - https://asciinema.org/a/MnxO7LniVrZ9SMQVDkHKOLvol
+<br>
+version 1.7.x - added new game 'prime'.
+Install and run - https://asciinema.org/a/FpfDoDnPht7qFfeoTRZDdV2y8

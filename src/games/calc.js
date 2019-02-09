@@ -22,7 +22,8 @@ const logic = () => {
     default:
       break;
   }
-  const question = `Question: ${op1} ${operationSymbol} ${op2}`;
+  correctAnswer = correctAnswer.toString();
+  const question = `${op1} ${operationSymbol} ${op2}`;
   return { question, correctAnswer };
 };
 

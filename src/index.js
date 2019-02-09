@@ -36,19 +36,19 @@ const checkAnswer = (playerAnswer, correctAnswer, name) => {
   return true;
 };
 
-const gameConstructor = (hiText, logic, rounds = 3, name = '') => {
+const rounds = 3;
+const gameConstructor = (hiText, logic) => {
   sayHi(hiText);
-  const playerName = (name !== '') ? name : askName();
-  const f = (limit) => {
+  const playerName = askName();
+  const gameLogic = (limit) => {
     if (exitFromGame(limit, playerName)) return false;
     const counter = limit - 1;
     const game = logic();
-    console.log(game.question);
+    console.log(`Question: ${game.question}`);
     const playerAnswer = getAnswer();
-    const correctAnswer = game.correctAnswer.toString();
-    return (checkAnswer(playerAnswer, correctAnswer, playerName)) ? f(counter) : false;
+    return (checkAnswer(playerAnswer, game.correctAnswer, playerName)) ? gameLogic(counter) : false;
   };
-  return f(rounds);
+  return gameLogic(rounds);
 };
 
 export default gameConstructor;

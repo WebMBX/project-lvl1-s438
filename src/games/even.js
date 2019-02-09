@@ -6,7 +6,7 @@ const isEven = number => number % 2 === 0;
 const logic = () => {
   const number = getRandomInt(10, 60);
   const correctAnswer = isEven(number) ? 'yes' : 'no';
-  const question = `Question: ${number}`;
+  const question = `${number}`;
   return { question, correctAnswer };
 };
 
