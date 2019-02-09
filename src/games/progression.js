@@ -5,14 +5,15 @@ const progressionLength = 10;
 
 const logic = () => {
   const start = getRandomInt(10, 150);
-  const hiddenElementPosition = getRandomInt(0, 9);
+  const hiddenElementPosition = getRandomInt(0, progressionLength - 1);
   const interval = getRandomInt(3, 6);
-  const progressionValues = [];
+  const progressionElements = [];
   for (let i = 0; i < progressionLength; i += 1) {
     const value = (i === hiddenElementPosition) ? '..' : start + interval * i;
-    progressionValues.push(value);
+    progressionElements.push(value);
   }
-  const question = progressionValues.reduce((accumulator, currentValue) => `${accumulator} ${currentValue}`);
+
+  const question = progressionElements.join(' ');
   const correctAnswer = (start + hiddenElementPosition * interval).toString();
   return { question, correctAnswer };
 };

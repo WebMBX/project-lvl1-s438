@@ -4,13 +4,11 @@
 <a href="https://travis-ci.org/WebMBX/project-lvl1-s438"><img
 src="https://travis-ci.org/WebMBX/project-lvl1-s438.svg?branch=master"></a>
 
-Install and run recording at:
-https://asciinema.org/a/NUk5ujBMx1WyqaLbFBj8R4Bqk
-<br>
-version 1.4.x - https://asciinema.org/a/eidJM3C3tMLn6n8UkxeWpRUFa
-<br>
-version 1.6.x - added new game 'progressession'.
-Install and run - https://asciinema.org/a/MnxO7LniVrZ9SMQVDkHKOLvol
-<br>
-version 1.7.x - added new game 'prime'.
-Install and run - https://asciinema.org/a/FpfDoDnPht7qFfeoTRZDdV2y8
+Trainin hexlet project. Small brain games.
+
+## Version history
+- < 1.4.x One game "brain-even". 
+- 1.4.x Added new game ["brain-calc"]((https://github.com/angular-medellin/meetup))
+- 1.5.x Added new game "brain-gcd"
+- 1.6.x Added new game ["brain-progression"](https://asciinema.org/a/MnxO7LniVrZ9SMQVDkHKOLvol)
+- 1.7.x Added new game ["brain-prime"](https://asciinema.org/a/FpfDoDnPht7qFfeoTRZDdV2y8)
